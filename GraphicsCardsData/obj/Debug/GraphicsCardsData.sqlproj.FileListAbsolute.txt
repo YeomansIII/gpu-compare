@@ -1,0 +1,14 @@
+C:\Users\BananaMan\Dropbox\School\IT 431\Project 3\GraphicsCardsData\bin\Debug\GraphicsCardsData.dacpac
+C:\Users\BananaMan\Dropbox\School\IT 431\Project 3\GraphicsCardsData\obj\Debug\Model.xml
+C:\Users\BananaMan\Dropbox\School\IT 431\Project 3\GraphicsCardsData\obj\Debug\refactor.xml
+C:\Users\BananaMan\Dropbox\School\IT 431\Project 3\GraphicsCardsData\obj\Debug\postdeploy.sql
+C:\Users\BananaMan\Dropbox\School\IT 431\Project 3\GraphicsCardsData\obj\Debug\predeploy.sql
+C:\Users\BananaMan\Dropbox\School\IT 431\Project 3\GraphicsCardsData\obj\Debug\GraphicsCardsData.dll
+C:\Users\BananaMan\Dropbox\School\IT 431\Project 3\GraphicsCardsData\obj\Debug\GraphicsCardsData.pdb
+C:\Users\BananaMan\Dropbox\School\IT 431\Project 3\GraphicsCardsData\bin\Debug\GraphicsCardsData.dll
+C:\Users\BananaMan\Dropbox\School\IT 431\Project 3\GraphicsCardsData\bin\Debug\GraphicsCardsData.pdb
+C:\Users\Oberon\Dropbox\School\IT 431\Project 3\GraphicsCardsData\bin\Debug\GraphicsCardsData.dacpac
+C:\Users\Oberon\Dropbox\School\IT 431\Project 3\GraphicsCardsData\bin\Debug\GraphicsCardsData.dll
+C:\Users\Oberon\Dropbox\School\IT 431\Project 3\GraphicsCardsData\bin\Debug\GraphicsCardsData.pdb
+C:\Users\Oberon\Dropbox\School\IT 431\Project 3\GraphicsCardsData\obj\Debug\GraphicsCardsData.dll
+C:\Users\Oberon\Dropbox\School\IT 431\Project 3\GraphicsCardsData\obj\Debug\GraphicsCardsData.pdb

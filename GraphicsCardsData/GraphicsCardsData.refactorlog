@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Operations Version="1.0" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+  <Operation Name="Rename Refactor" Key="77304c11-2f34-4e17-8769-94f087540d9c" ChangeDateTime="04/28/2017 00:09:15">
+    <Property Name="ElementName" Value="[dbo].[GPUCard].[Man]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[GPUCard]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Manufacturer" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="93b2dbb7-b7fd-4217-a725-6b974fb2a761" ChangeDateTime="04/28/2017 00:15:38">
+    <Property Name="ElementName" Value="[dbo].[GPUCard].[Manufacturer]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[GPUCard]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ManufacturerName" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="79b4551e-3a32-4f47-ae20-9eda8a1d027f" ChangeDateTime="04/28/2017 00:16:00">
+    <Property Name="ElementName" Value="[dbo].[Manufacturer].[Name]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Manufacturer]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ManufacturerName" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="79a9ae01-19a8-4553-bbf1-c722cf860562" ChangeDateTime="04/28/2017 00:51:35">
+    <Property Name="ElementName" Value="[dbo].[Chipset].[CardName]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Chipset]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Chipset" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="d624a219-9e7d-4384-92c4-344a609c4f13" ChangeDateTime="04/28/2017 00:51:56">
+    <Property Name="ElementName" Value="[dbo].[GPUCard].[CardName]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[GPUCard]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Chipset" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="a5ccf05a-717f-46f7-8858-7828c4c0e4d0" ChangeDateTime="04/28/2017 00:52:30">
+    <Property Name="ElementName" Value="[dbo].[GPUCard].[ManufactureDate]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[GPUCard]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ReleaseDate" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="ca6c90de-8aad-46c1-9bba-9a97c7cc3647" ChangeDateTime="04/28/2017 01:23:08">
+    <Property Name="ElementName" Value="[dbo].[Chipset].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Chipset]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ChipsetID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="2e746fe7-3086-4ff4-8dc6-f83f0a1913a1" ChangeDateTime="04/28/2017 01:23:19">
+    <Property Name="ElementName" Value="[dbo].[GPUCard].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[GPUCard]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="GPUCardID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="e4d260e0-886e-445a-a3ed-41a24cb7c9fd" ChangeDateTime="04/28/2017 01:23:30">
+    <Property Name="ElementName" Value="[dbo].[Manufacturer].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Manufacturer]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ManufactureID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="7b009076-a6cf-47e5-8e51-fc175bbab6dd" ChangeDateTime="04/28/2017 01:33:01">
+    <Property Name="ElementName" Value="[dbo].[Chipset].[ManufacturerName]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Chipset]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ManufacturerID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="0456ba4a-8032-4075-ae6b-0b8a7a24548b" ChangeDateTime="04/28/2017 01:33:12">
+    <Property Name="ElementName" Value="[dbo].[Chipset].[ManufacturerID]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Chipset]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ManufactureID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="47f8477c-0705-4c73-9ef4-afef4d9ca610" ChangeDateTime="04/28/2017 01:33:59">
+    <Property Name="ElementName" Value="[dbo].[GPUCard].[ManufacturerName]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[GPUCard]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ManufactureID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="035dfd53-ad09-4c4a-9a40-74038cf25c16" ChangeDateTime="04/28/2017 01:34:19">
+    <Property Name="ElementName" Value="[dbo].[GPUCard].[Chipset]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[GPUCard]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ChipsetID" />
+  </Operation>
+</Operations>

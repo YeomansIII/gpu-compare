@@ -1,0 +1,82 @@
+﻿@model IT431Site.Models.GPUCard
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>GPUCard</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MemoryType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MemoryType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Memory)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Memory)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ClockSpeed)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClockSpeed)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ImageLink)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ImageLink)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ReleaseDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReleaseDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Chipset.ChipsetName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Chipset.ChipsetName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Manufacturer.ManufacturerName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Manufacturer.ManufacturerName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.GPUCardID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
