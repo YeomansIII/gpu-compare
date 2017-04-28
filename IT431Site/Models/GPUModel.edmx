@@ -1,0 +1,214 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="GraphicsCardsDataModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Chipset">
+          <Key>
+            <PropertyRef Name="ChipsetID" />
+          </Key>
+          <Property Name="ChipsetID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ChipsetName" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="GPUCard">
+          <Key>
+            <PropertyRef Name="GPUCardID" />
+          </Key>
+          <Property Name="GPUCardID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ChipsetID" Type="int" Nullable="false" />
+          <Property Name="ManufactureID" Type="int" Nullable="false" />
+          <Property Name="Price" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="MemoryType" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Memory" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ClockSpeed" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ImageLink" Type="nvarchar" MaxLength="1000" />
+          <Property Name="ReleaseDate" Type="date" />
+        </EntityType>
+        <EntityType Name="Manufacturer">
+          <Key>
+            <PropertyRef Name="ManufactureID" />
+          </Key>
+          <Property Name="ManufactureID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ManufacturerName" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_dbo_GPUCard_dbo_ChipSet_ChipsetID">
+          <End Role="Chipset" Type="Self.Chipset" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="GPUCard" Type="Self.GPUCard" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Chipset">
+              <PropertyRef Name="ChipsetID" />
+            </Principal>
+            <Dependent Role="GPUCard">
+              <PropertyRef Name="ChipsetID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_GPUCard_dbo_Manufacturer_ManufactureID">
+          <End Role="Manufacturer" Type="Self.Manufacturer" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="GPUCard" Type="Self.GPUCard" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Manufacturer">
+              <PropertyRef Name="ManufactureID" />
+            </Principal>
+            <Dependent Role="GPUCard">
+              <PropertyRef Name="ManufactureID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="GraphicsCardsDataModelStoreContainer">
+          <EntitySet Name="Chipset" EntityType="Self.Chipset" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GPUCard" EntityType="Self.GPUCard" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Manufacturer" EntityType="Self.Manufacturer" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_dbo_GPUCard_dbo_ChipSet_ChipsetID" Association="Self.FK_dbo_GPUCard_dbo_ChipSet_ChipsetID">
+            <End Role="Chipset" EntitySet="Chipset" />
+            <End Role="GPUCard" EntitySet="GPUCard" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_GPUCard_dbo_Manufacturer_ManufactureID" Association="Self.FK_dbo_GPUCard_dbo_Manufacturer_ManufactureID">
+            <End Role="Manufacturer" EntitySet="Manufacturer" />
+            <End Role="GPUCard" EntitySet="GPUCard" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="GraphicsCardsDataModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Chipset">
+          <Key>
+            <PropertyRef Name="ChipsetID" />
+          </Key>
+          <Property Name="ChipsetID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="GPUCards" Relationship="Self.FK_dbo_GPUCard_dbo_ChipSet_ChipsetID" FromRole="Chipset" ToRole="GPUCard" />
+          <Property Name="ChipsetName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="GPUCard">
+          <Key>
+            <PropertyRef Name="GPUCardID" />
+          </Key>
+          <Property Name="GPUCardID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ChipsetID" Type="Int32" Nullable="false" />
+          <Property Name="ManufactureID" Type="Int32" Nullable="false" />
+          <Property Name="Price" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="MemoryType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Memory" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ClockSpeed" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ImageLink" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="ReleaseDate" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="Chipset" Relationship="Self.FK_dbo_GPUCard_dbo_ChipSet_ChipsetID" FromRole="GPUCard" ToRole="Chipset" />
+          <NavigationProperty Name="Manufacturer" Relationship="Self.FK_dbo_GPUCard_dbo_Manufacturer_ManufactureID" FromRole="GPUCard" ToRole="Manufacturer" />
+        </EntityType>
+        <EntityType Name="Manufacturer">
+          <Key>
+            <PropertyRef Name="ManufactureID" />
+          </Key>
+          <Property Name="ManufactureID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ManufacturerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="GPUCards" Relationship="Self.FK_dbo_GPUCard_dbo_Manufacturer_ManufactureID" FromRole="Manufacturer" ToRole="GPUCard" />
+        </EntityType>
+        <Association Name="FK_dbo_GPUCard_dbo_ChipSet_ChipsetID">
+          <End Role="Chipset" Type="Self.Chipset" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="GPUCard" Type="Self.GPUCard" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Chipset">
+              <PropertyRef Name="ChipsetID" />
+            </Principal>
+            <Dependent Role="GPUCard">
+              <PropertyRef Name="ChipsetID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_GPUCard_dbo_Manufacturer_ManufactureID">
+          <End Role="Manufacturer" Type="Self.Manufacturer" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="GPUCard" Type="Self.GPUCard" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Manufacturer">
+              <PropertyRef Name="ManufactureID" />
+            </Principal>
+            <Dependent Role="GPUCard">
+              <PropertyRef Name="ManufactureID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="GraphicsCardsDataEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Chipsets" EntityType="Self.Chipset" />
+          <EntitySet Name="GPUCards" EntityType="Self.GPUCard" />
+          <EntitySet Name="Manufacturers" EntityType="Self.Manufacturer" />
+          <AssociationSet Name="FK_dbo_GPUCard_dbo_ChipSet_ChipsetID" Association="Self.FK_dbo_GPUCard_dbo_ChipSet_ChipsetID">
+            <End Role="Chipset" EntitySet="Chipsets" />
+            <End Role="GPUCard" EntitySet="GPUCards" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_GPUCard_dbo_Manufacturer_ManufactureID" Association="Self.FK_dbo_GPUCard_dbo_Manufacturer_ManufactureID">
+            <End Role="Manufacturer" EntitySet="Manufacturers" />
+            <End Role="GPUCard" EntitySet="GPUCards" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="GraphicsCardsDataModelStoreContainer" CdmEntityContainer="GraphicsCardsDataEntities">
+          <EntitySetMapping Name="Chipsets">
+            <EntityTypeMapping TypeName="GraphicsCardsDataModel.Chipset">
+              <MappingFragment StoreEntitySet="Chipset">
+                <ScalarProperty Name="ChipsetName" ColumnName="ChipsetName" />
+                <ScalarProperty Name="ChipsetID" ColumnName="ChipsetID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GPUCards">
+            <EntityTypeMapping TypeName="GraphicsCardsDataModel.GPUCard">
+              <MappingFragment StoreEntitySet="GPUCard">
+                <ScalarProperty Name="GPUCardID" ColumnName="GPUCardID" />
+                <ScalarProperty Name="ChipsetID" ColumnName="ChipsetID" />
+                <ScalarProperty Name="ManufactureID" ColumnName="ManufactureID" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="MemoryType" ColumnName="MemoryType" />
+                <ScalarProperty Name="Memory" ColumnName="Memory" />
+                <ScalarProperty Name="ClockSpeed" ColumnName="ClockSpeed" />
+                <ScalarProperty Name="ImageLink" ColumnName="ImageLink" />
+                <ScalarProperty Name="ReleaseDate" ColumnName="ReleaseDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Manufacturers">
+            <EntityTypeMapping TypeName="GraphicsCardsDataModel.Manufacturer">
+              <MappingFragment StoreEntitySet="Manufacturer">
+                <ScalarProperty Name="ManufactureID" ColumnName="ManufactureID" />
+                <ScalarProperty Name="ManufacturerName" ColumnName="ManufacturerName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

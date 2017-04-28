@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="GraphicsCardsDataModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Chipset">
+    <Key>
+      <PropertyRef Name="ChipsetID" />
+    </Key>
+    <Property Name="ChipsetID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ChipsetName" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="GPUCard">
+    <Key>
+      <PropertyRef Name="GPUCardID" />
+    </Key>
+    <Property Name="GPUCardID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ChipsetID" Type="int" Nullable="false" />
+    <Property Name="ManufactureID" Type="int" Nullable="false" />
+    <Property Name="Price" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="MemoryType" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Memory" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ClockSpeed" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ImageLink" Type="nvarchar" MaxLength="1000" />
+    <Property Name="ReleaseDate" Type="date" />
+  </EntityType>
+  <EntityType Name="Manufacturer">
+    <Key>
+      <PropertyRef Name="ManufactureID" />
+    </Key>
+    <Property Name="ManufactureID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ManufacturerName" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_dbo_GPUCard_dbo_ChipSet_ChipsetID">
+    <End Role="Chipset" Type="Self.Chipset" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="GPUCard" Type="Self.GPUCard" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Chipset">
+        <PropertyRef Name="ChipsetID" />
+      </Principal>
+      <Dependent Role="GPUCard">
+        <PropertyRef Name="ChipsetID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_GPUCard_dbo_Manufacturer_ManufactureID">
+    <End Role="Manufacturer" Type="Self.Manufacturer" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="GPUCard" Type="Self.GPUCard" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Manufacturer">
+        <PropertyRef Name="ManufactureID" />
+      </Principal>
+      <Dependent Role="GPUCard">
+        <PropertyRef Name="ManufactureID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="GraphicsCardsDataModelStoreContainer">
+    <EntitySet Name="Chipset" EntityType="Self.Chipset" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GPUCard" EntityType="Self.GPUCard" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Manufacturer" EntityType="Self.Manufacturer" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_dbo_GPUCard_dbo_ChipSet_ChipsetID" Association="Self.FK_dbo_GPUCard_dbo_ChipSet_ChipsetID">
+      <End Role="Chipset" EntitySet="Chipset" />
+      <End Role="GPUCard" EntitySet="GPUCard" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_GPUCard_dbo_Manufacturer_ManufactureID" Association="Self.FK_dbo_GPUCard_dbo_Manufacturer_ManufactureID">
+      <End Role="Manufacturer" EntitySet="Manufacturer" />
+      <End Role="GPUCard" EntitySet="GPUCard" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
