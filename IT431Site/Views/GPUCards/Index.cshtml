@@ -53,7 +53,7 @@
             @Html.DisplayFor(modelItem => item.ClockSpeed)
         </td>
         <td>
-            <img src="~/Images/@Html.DisplayFor(modelItem => item.ImageLink)" class="img-responsive" style="width:auto 40px;height:40px;"/>
+            <a href="~/Images/@Html.DisplayFor(modelItem => item.ImageLink)" class="preview"><img src="~/Images/@Html.DisplayFor(modelItem => item.ImageLink)" class="img-responsive" style="width:auto 40px;height:40px;" /></a>
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.ReleaseDate)
