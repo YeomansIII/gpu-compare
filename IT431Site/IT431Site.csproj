@@ -327,11 +327,6 @@
     <Content Include="Views\Chipsets\Details.cshtml" />
     <Content Include="Views\Chipsets\Edit.cshtml" />
     <Content Include="Views\Chipsets\Index.cshtml" />
-    <Content Include="Views\GPUCards1\Create.cshtml" />
-    <Content Include="Views\GPUCards1\Delete.cshtml" />
-    <Content Include="Views\GPUCards1\Details.cshtml" />
-    <Content Include="Views\GPUCards1\Edit.cshtml" />
-    <Content Include="Views\GPUCards1\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
