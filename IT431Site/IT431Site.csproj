@@ -237,6 +237,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\GIGABYTEGTX1070.jpg" />
     <Content Include="Models\GPUModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>GPUModel.edmx</DependentUpon>
