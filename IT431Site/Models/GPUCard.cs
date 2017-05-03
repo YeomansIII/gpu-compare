@@ -11,7 +11,8 @@ namespace IT431Site.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class GPUCard
     {
         public int GPUCardID { get; set; }
@@ -22,6 +23,9 @@ namespace IT431Site.Models
         public string Memory { get; set; }
         public string ClockSpeed { get; set; }
         public string ImageLink { get; set; }
+        [DataType(DataType.Date)]
+        [Display(Name = "Release Date")]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public Nullable<System.DateTime> ReleaseDate { get; set; }
     
         public virtual Chipset Chipset { get; set; }
