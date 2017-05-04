@@ -36,6 +36,7 @@ namespace IT431Site.Controllers
             return View(gPUCard);
         }
 
+        [Authorize]
         // GET: GPUCards/Create
         public ActionResult Create()
         {
@@ -63,6 +64,7 @@ namespace IT431Site.Controllers
             return View(gPUCard);
         }
 
+        [Authorize]
         // GET: GPUCards/Edit/5
         public ActionResult Edit(int? id)
         {
@@ -98,6 +100,7 @@ namespace IT431Site.Controllers
             return View(gPUCard);
         }
 
+        [Authorize]
         // GET: GPUCards/Delete/5
         public ActionResult Delete(int? id)
         {
