@@ -6,7 +6,7 @@
     <h1 class="text-center">Compare GPU</h1>
     <p class="lead text-center">Compare two Graphics Cards and see which is better.</p>
 
-    <div class="form-horizontal">
+    <form id="compareForm" class="form-horizontal">
         <div class="form-group">
             <div class="col-md-offset-2 col-md-8 form-inline">
                 <input type="text" id="GPU1" name="GPU1" class="form-control" placeholder="GPU1" />
@@ -20,24 +20,65 @@
                 <input type="submit" id="submit" value="Compare" class="btn btn-primary btn-lg" />
             </div>
         </div>
+    </form>
+    <br />
+    <br />
+</div>
+
+<div class="row">
+    <div id="gpuTable1" class="gpu-table col-md-6 col-sm-12">
     </div>
-    <br />
-    <br />
+    <div id="gpuTable2" class="gpu-table col-md-6 col-sm-12">
+    </div>
 </div>
+<script>
+    $(document).ready(function () {
+        $('#GPU1').bootcomplete({ url: '/api/GpuApi/Autocomplete', method: "get" });
+        $('#GPU2').bootcomplete({ url: '/api/GpuApi/Autocomplete', method: "get" });
 
-<div id="gpueTable1">
+        var createViews = function (data) {
+            console.log('create views');
+            var gpu1 = data.gpu1;
+            var gpu2 = data.gpu2;
 
+            var gpu1Html = '<img src="' + gpu1.ImageLink + '" class="img-responsive"/>' +
+                '<h3' + gpu1.Manufacturer.ManufacturerName + ' ' + gpu1.Chipset.ChipsetName + '</h3>' +
+                '<dl class="dl-horizontal">' +
+                '<dt>Price</dt><dd>' + gpu1.Price + '</dd>' +
+                '<dt>Clock Speed</dt><dd>' + gpu1.ClockSpeed + '</dd>' +
+                '<dt>Memory</dt><dd>' + gpu1.Memory + '</dd>' +
+                '<dt>Memory Type</dt><dd>' + gpu1.MemoryType + '</dd>' +
+                '<dt>Release Date</dt><dd>' + gpu1.ReleaseDate + '</dd></dl>',
+                gpu2Html = '<img src="' + gpu2.ImageLink + '" class="img-responsive"/>' +
+                    '<h3' + gpu2.Manufacturer.ManufacturerName + ' ' + gpu2.Chipset.ChipsetName + '</h3>' +
+                    '<dl class="dl-horizontal">' +
+                    '<dt>Price</dt><dd>' + gpu2.Price + '</dd>' +
+                    '<dt>Clock Speed</dt><dd>' + gpu2.ClockSpeed + '</dd>' +
+                    '<dt>Memory</dt><dd>' + gpu2.Memory + '</dd>' +
+                    '<dt>Memory Type</dt><dd>' + gpu2.MemoryType + '</dd>' +
+                    '<dt>Release Date</dt><dd>' + gpu2.ReleaseDate + '</dd></dl>';
 
-</div>
+            $('#gpuTable1').html(gpu1Html);
+            $('#gpuTable2').html(gpu2Html);
+        }
 
-<div id="gpuTable2">
-
-
-</div>
-
-
-<div>
-    @Html.ActionLink("GPUs", "Index", "GPUCards")<br />
-    @Html.ActionLink("Manufacturers", "Index", "Manufacturers")<br />
-    @Html.ActionLink("Chipsets", "Index", "Chipsets")<br />
-</div>
+        $('#compareForm').submit(function (event) {
+            event.preventDefault();
+            var formData = $(this).serialize();
+            console.log($(this));
+            var gpu1Id = $('#compareForm input[name="GPU1_id"]').val();
+            console.log(gpu1Id);
+            var gpu2Id = $('#compareForm input[name="GPU2_id"]').val();
+            console.log(gpu2Id);
+            $.ajax({
+                type: 'GET',
+                url: '/api/GpuApi/Compare?id1=' + gpu1Id + '&id2=' + gpu2Id,
+                dataType: 'json',
+                success: function (data) {
+                    console.log(data);
+                    createViews(data);
+                }
+            });
+        });
+    });
+</script>
