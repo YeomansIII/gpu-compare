@@ -54,9 +54,27 @@ textarea {
 }
 
     .compare-fields .bc-wrapper {
+        position: relative;
         width: 100%;
     }
 
     .full {
         width: 100% !important;
     }
+
+    .gpu-table {
+        font-size: 22px;
+    }
+
+    .gpu-table img {
+        padding: 15px;
+        margin: auto;
+    }
+
+.bc-menu {
+    position: absolute;
+    right: 0px;
+    left: 0px;
+    margin: 0px 20px;
+    display: none;
+}
