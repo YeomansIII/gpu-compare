@@ -18,11 +18,22 @@ namespace IT431Site.Models
         public int GPUCardID { get; set; }
         public int ChipsetID { get; set; }
         public int ManufactureID { get; set; }
+        [Required]
+        [Range(1.0, Double.MaxValue,  ErrorMessage = "Price must be greater than 0.")]
+        [Display(Name = "Price")]
         public decimal Price { get; set; }
+        [Required]
+        [Display(Name = "Memory Type")]
         public string MemoryType { get; set; }
+        [Required]
+        [Display(Name = "Memory(MB)")]
         public string Memory { get; set; }
+        [Required]
+        [Display(Name = "Clock Speed(MHz)")]
         public string ClockSpeed { get; set; }
+        [Display(Name = "Picture")]
         public string ImageLink { get; set; }
+        [Required]
         [DataType(DataType.Date)]
         [Display(Name = "Release Date")]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
