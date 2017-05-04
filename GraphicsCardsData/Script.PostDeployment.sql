@@ -24,8 +24,8 @@ VALUES (ManufacturerName);
 
 MERGE INTO Chipset AS Target 
 USING (VALUES 
-        (1,'GeForce GTX 1070'),
-		(2,'GeForce GTX 1080')
+        (1,'GTX 1070'),
+		(2,'GTX 1080')
 ) 
 AS Source (ChipsetID, ChipsetName) 
 ON Target.ChipsetID = Source.ChipsetID 
@@ -35,7 +35,7 @@ VALUES (ChipsetName);
 
 MERGE INTO GPUCard AS Target
 USING (VALUES 
-        (1, 1, 3, 359.00, 'GDDR5', '8,192', '1,506', '', '2013-09-01')
+        (1, 1, 3, 359.00, 'GDDR5', '8,192 MB', '1,506 MHz', '', '2013-09-01')
 )
 AS Source (GPUCardID, ChipsetID, ManufactureID, Price, MemoryType, Memory, ClockSpeed, ImageLink, ReleaseDate)
 ON Target.GPUCardID = Source.GPUCardID

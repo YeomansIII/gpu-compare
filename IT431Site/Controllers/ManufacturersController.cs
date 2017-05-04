@@ -51,14 +51,6 @@ namespace IT431Site.Controllers
         {
             if (ModelState.IsValid)
             {
-                Manufacturer matchingChip = db.Manufacturers.Where(cm => string.Compare(cm.ManufacturerName.ToString(), manufacturer.ManufacturerName.ToString(), true) == 0).FirstOrDefault();
-
-                if (matchingChip != null)
-                {
-                    ModelState.AddModelError("ManufacturerName", "The Manufacturer already exists!");
-                    return View(manufacturer);
-                }
-
                 db.Manufacturers.Add(manufacturer);
                 db.SaveChanges();
                 return RedirectToAction("Index");
