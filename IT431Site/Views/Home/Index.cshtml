@@ -6,13 +6,10 @@
     <h1 class="text-center">Compare GPU</h1>
     <p class="lead text-center">Compare two Graphics Cards and see which is better.</p>
 
-<<<<<<< HEAD
     <form id="compareForm" class="form-horizontal">
-=======
     <div class="form-horizontal">
->>>>>>> 49ea3e935efa410a67cb22b42842252029ea9184
         <div class="form-group">
-            <div class="col-md-offset-2 col-md-8 form-inline">
+            <div class="col-md-12 form-inline text-center">
                 <input type="text" id="GPU1" name="GPU1" class="form-control" placeholder="GPU1" />
                 V.S
                 <input type="text" id="GPU2" name="GPU2" class="form-control" placeholder="GPU2" />
@@ -24,16 +21,10 @@
                 <input type="submit" id="submit" value="Compare" class="btn btn-primary btn-lg" />
             </div>
         </div>
-<<<<<<< HEAD
+        </div>
     </form>
-=======
-    </div>
->>>>>>> 49ea3e935efa410a67cb22b42842252029ea9184
-    <br />
-    <br />
 </div>
 
-<<<<<<< HEAD
 <div class="row">
     <div id="gpuTable1" class="gpu-table col-md-6 col-sm-12">
     </div>
@@ -50,20 +41,20 @@
             var gpu1 = data.gpu1;
             var gpu2 = data.gpu2;
 
-            var gpu1Html = '<img src="' + gpu1.ImageLink + '" class="img-responsive"/>' +
+            var gpu1Html = '<img src="/Images/' + gpu1.ImageLink + '" class="img-responsive"/>' +
                 '<h3' + gpu1.Manufacturer.ManufacturerName + ' ' + gpu1.Chipset.ChipsetName + '</h3>' +
                 '<dl class="dl-horizontal">' +
                 '<dt>Price</dt><dd>' + gpu1.Price + '</dd>' +
-                '<dt>Clock Speed</dt><dd>' + gpu1.ClockSpeed + '</dd>' +
-                '<dt>Memory</dt><dd>' + gpu1.Memory + '</dd>' +
+                '<dt>Clock Speed</dt><dd>' + gpu1.ClockSpeed + ' MHz</dd>' +
+                '<dt>Memory</dt><dd>' + gpu1.Memory + ' MB</dd>' +
                 '<dt>Memory Type</dt><dd>' + gpu1.MemoryType + '</dd>' +
                 '<dt>Release Date</dt><dd>' + gpu1.ReleaseDate + '</dd></dl>',
-                gpu2Html = '<img src="' + gpu2.ImageLink + '" class="img-responsive"/>' +
+                gpu2Html = '<img src="/Images/' + gpu2.ImageLink + '" class="img-responsive"/>' +
                     '<h3' + gpu2.Manufacturer.ManufacturerName + ' ' + gpu2.Chipset.ChipsetName + '</h3>' +
                     '<dl class="dl-horizontal">' +
                     '<dt>Price</dt><dd>' + gpu2.Price + '</dd>' +
-                    '<dt>Clock Speed</dt><dd>' + gpu2.ClockSpeed + '</dd>' +
-                    '<dt>Memory</dt><dd>' + gpu2.Memory + '</dd>' +
+                    '<dt>Clock Speed</dt><dd>' + gpu2.ClockSpeed + ' MHz</dd>' +
+                    '<dt>Memory</dt><dd>' + gpu2.Memory + 'MB</dd>' +
                     '<dt>Memory Type</dt><dd>' + gpu2.MemoryType + '</dd>' +
                     '<dt>Release Date</dt><dd>' + gpu2.ReleaseDate + '</dd></dl>';
 
@@ -91,21 +82,3 @@
         });
     });
 </script>
-=======
-<div id="gpueTable1">
-
-
-</div>
-
-<div id="gpuTable2">
-
-
-</div>
-
-
-<div>
-    @Html.ActionLink("GPUs", "Index", "GPUCards")<br />
-    @Html.ActionLink("Manufacturers", "Index", "Manufacturers")<br />
-    @Html.ActionLink("Chipsets", "Index", "Chipsets")<br />
-</div>
->>>>>>> 49ea3e935efa410a67cb22b42842252029ea9184
