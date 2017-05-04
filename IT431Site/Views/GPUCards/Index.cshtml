@@ -27,10 +27,16 @@ pre {
 }
 </style>
 <p>
+@if (Request.IsAuthenticated)
+{
     @Html.ActionLink("Create New", "Create")
+}
 </p>
 <table class="table">
     <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ImageLink)
+        </th>
         <th>
             @Html.DisplayNameFor(model => model.Price)
         </th>
@@ -42,9 +48,6 @@ pre {
         </th>
         <th>
             @Html.DisplayNameFor(model => model.ClockSpeed)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ImageLink)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.ReleaseDate)
@@ -61,6 +64,9 @@ pre {
 @foreach (var item in Model) {
     <tr>
         <td>
+            <a href="~/Images/@Html.DisplayFor(modelItem => item.ImageLink)" class="preview"><img src="~/Images/@Html.DisplayFor(modelItem => item.ImageLink)" class="img-responsive" style="height:40px;" /></a>
+        </td>
+        <td>
             @Html.DisplayFor(modelItem => item.Price)
         </td>
         <td>
@@ -73,9 +79,6 @@ pre {
             @Html.DisplayFor(modelItem => item.ClockSpeed)
         </td>
         <td>
-            <a href="~/Images/@Html.DisplayFor(modelItem => item.ImageLink)" class="preview"><img src="~/Images/@Html.DisplayFor(modelItem => item.ImageLink)" class="img-responsive" style="height:40px;" /></a>
-        </td>
-        <td>
             @Html.DisplayFor(modelItem => item.ReleaseDate)
         </td>
         <td>
@@ -84,12 +87,20 @@ pre {
         <td>
             @Html.DisplayFor(modelItem => item.Manufacturer.ManufacturerName)
         </td>
+    @if (Request.IsAuthenticated)
+    {
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.GPUCardID }) |
             @Html.ActionLink("Details", "Details", new { id=item.GPUCardID }) |
             @Html.ActionLink("Delete", "Delete", new { id=item.GPUCardID })
         </td>
+    }
+    else
+    {
+        <td>
+            @Html.ActionLink("Details", "Details", new { id = item.GPUCardID })
+        </td>
+    }
     </tr>
 }
-
 </table>
