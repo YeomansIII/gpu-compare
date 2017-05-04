@@ -51,6 +51,14 @@ namespace IT431Site.Controllers
         {
             if (ModelState.IsValid)
             {
+                Chipset matchingChip = db.Chipsets.Where(cm => string.Compare(cm.ChipsetName.ToString(), chipset.ChipsetName.ToString(), true) == 0).FirstOrDefault();
+
+                if (matchingChip != null)
+                {
+                    ModelState.AddModelError("ChipsetName", "The Chipset already exists!");
+                    return View(chipset);
+                }
+
                 db.Chipsets.Add(chipset);
                 db.SaveChanges();
                 return RedirectToAction("Index");
