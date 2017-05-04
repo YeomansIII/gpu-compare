@@ -1,6 +1,5 @@
 ﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+    color: white;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -24,5 +23,51 @@ textarea {
 }
 
 .gpu-table {
+}
 
+h1, h2{
+    color: white !important;
+}
+
+#grad {
+  background: blue; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(left top, black, #4a71ff, black); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(bottom right, black, #4a71ff, black); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(bottom right, black, #4a71ff, black); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to bottom right, black, #4a71ff, black); /* Standard syntax */
+  height: 100vh;
+}
+
+.btn-color{
+    background-color: #4a71ff;
+    border-color: #4a71ff;
+}
+
+.btn-color:hover{
+    background-color:#718ae6;
+    border-color: #718ae6;
+}
+.navbar{
+    background-color: #243080 !important;
+    border: solid 4px !important;
+    border-color: black !important;
+}
+
+.collapse{
+    background-color: #243080 !important;
+    background-repeat: no-repeat;
+}
+
+.foot-bot{
+    position: absolute;
+    height: 20px;
+    bottom: 0px;
+}
+
+.navColor ul li a{
+    color: white !important;
+}
+
+.navColor ul li a:hover{
+    color: grey !important;
 }
