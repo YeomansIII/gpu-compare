@@ -10,6 +10,7 @@ using IT431Site.Models;
 
 namespace IT431Site.Controllers
 {
+    [Authorize]
     public class ChipsetsController : Controller
     {
         private GraphicsCardsDataEntities db = new GraphicsCardsDataEntities();

@@ -185,8 +185,6 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ManufacturersController.cs" />
-    <Compile Include="Controllers\WidgetsController.cs" />
-    <Compile Include="DAL\SiteDataContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -226,7 +224,6 @@
     <Compile Include="Models\Manufacturer.cs">
       <DependentUpon>GPUModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Widget.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -239,7 +236,9 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\EVGAGTX1060.jpg" />
     <Content Include="Images\GIGABYTEGTX1070.jpg" />
+    <Content Include="Images\GIGABYTEGTX1080.jpg" />
     <Content Include="Models\GPUModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>GPUModel.edmx</DependentUpon>
@@ -319,11 +318,6 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Widgets\Create.cshtml" />
-    <Content Include="Views\Widgets\Delete.cshtml" />
-    <Content Include="Views\Widgets\Details.cshtml" />
-    <Content Include="Views\Widgets\Edit.cshtml" />
-    <Content Include="Views\Widgets\Index.cshtml" />
     <Content Include="Views\GPUCards\Create.cshtml" />
     <Content Include="Views\GPUCards\Delete.cshtml" />
     <Content Include="Views\GPUCards\Details.cshtml" />
