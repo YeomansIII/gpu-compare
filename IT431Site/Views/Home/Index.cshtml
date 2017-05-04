@@ -48,23 +48,23 @@
             var gpu1Html = '<img src="/Images/' + gpu1.ImageLink + '" class="img-responsive"/>' +
                 '<h3' + gpu1.Manufacturer.ManufacturerName + ' ' + gpu1.Chipset.ChipsetName + '</h3>' +
                 '<dl class="dl-horizontal">' +
-                '<dt>Price</dt><dd>' + gpu1.Price + '</dd>' +
+                '<dt>Price</dt><dd>$' + gpu1.Price + '</dd>' +
                 '<dt>Clock Speed</dt><dd>' + gpu1.ClockSpeed + ' MHz</dd>' +
                 '<div class="progress progress-striped"> <div class="progress-bar progress-bar-info" style="width: ' + gpu1CSBar + '%"></div></div>' +
                 '<dt>Memory</dt><dd>' + gpu1.Memory + ' MB</dd>' +
                 '<div class="progress progress-striped"> <div class="progress-bar progress-bar-info" style="width: ' + gpu1MBar + '%"></div></div>' +
                 '<dt>Memory Type</dt><dd>' + gpu1.MemoryType + '</dd>' +
-                '<dt>Release Date</dt><dd>' + gpu1.ReleaseDate + '</dd></dl>',
+                '<dt>Release Date</dt><dd>' + gpu1.ReleaseDate.substring(0, 10); + '</dd></dl>',
                 gpu2Html = '<img src="/Images/' + gpu2.ImageLink + '" class="img-responsive"/>' +
                     '<h3' + gpu2.Manufacturer.ManufacturerName + ' ' + gpu2.Chipset.ChipsetName + '</h3>' +
                     '<dl class="dl-horizontal">' +
-                    '<dt>Price</dt><dd>' + gpu2.Price + '</dd>' +
+                    '<dt>Price</dt><dd>$' + gpu2.Price + '</dd>' +
                     '<dt>Clock Speed</dt><dd>' + gpu2.ClockSpeed + ' MHz</dd>' +
                     '<div class="progress progress-striped"> <div class="progress-bar progress-bar-danger" style="width: ' + gpu2CSBar + '%"></div></div>' +
-                    '<dt>Memory</dt><dd>' + gpu2.Memory + 'MB</dd>' +
+                    '<dt>Memory</dt><dd>' + gpu2.Memory + ' MB</dd>' +
                     '<div class="progress progress-striped"> <div class="progress-bar progress-bar-danger" style="width: ' + gpu2MBar + '%"></div></div>' +
                     '<dt>Memory Type</dt><dd>' + gpu2.MemoryType + '</dd>' +
-                    '<dt>Release Date</dt><dd>' + gpu2.ReleaseDate + '</dd></dl>';
+                    '<dt>Release Date</dt><dd>' + gpu2.ReleaseDate.substring(0, 10); + '</dd></dl>';
 
             $('#gpuTable1').html(gpu1Html);
             $('#gpuTable2').html(gpu2Html);
