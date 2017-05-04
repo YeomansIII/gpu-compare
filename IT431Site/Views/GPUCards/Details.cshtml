@@ -7,7 +7,8 @@
 <h2>Details</h2>
 
 <div>
-    <h4>GPUCard</h4>
+    <h4>@Html.DisplayFor(model => model.Manufacturer.ManufacturerName) @Html.DisplayFor(model => model.Chipset.ChipsetName)</h4>
+    <p><img src="~/Images/@Html.DisplayFor(model => model.ImageLink)" /></p>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -43,14 +44,6 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.ImageLink)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ImageLink)
-        </dd>
-
-        <dt>
             @Html.DisplayNameFor(model => model.ReleaseDate)
         </dt>
 
@@ -76,7 +69,16 @@
 
     </dl>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.GPUCardID }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+@if (Request.IsAuthenticated)
+{
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.GPUCardID }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}
+else
+{
+    <p>
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}
