@@ -23,6 +23,40 @@ textarea {
     max-width: 280px;
 }
 
-.gpu-table {
-
+.compare-fields {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+.compare-fields div {
+    min-width: 50px;
+}
+
+.compare-fields .compare-input {
+    width: 30%;
+}
+
+.compare-vs {
+    margin: 20px;
+}
+
+@media only screen and (max-width: 900px) {
+    .compare-fields {
+       flex-direction: column;
+    }
+    .compare-input {
+        width: 100% !important;
+    }
+    .compare-input input {
+        margin: auto;
+    }
+}
+
+    .compare-fields .bc-wrapper {
+        width: 100%;
+    }
+
+    .full {
+        width: 100% !important;
+    }
