@@ -8,8 +8,8 @@
     padding-right: 15px;
 }
 
-/* Override the default bootstrap behavior where horizontal description lists 
-   will truncate terms that are too long to fit in the left column 
+/* Override the default bootstrap behavior where horizontal description lists
+   will truncate terms that are too long to fit in the left column
 */
 .dl-horizontal dt {
     white-space: normal;
@@ -20,9 +20,6 @@ input,
 select,
 textarea {
     max-width: 280px;
-}
-
-.gpu-table {
 }
 
 h1, h2{
@@ -70,4 +67,59 @@ h1, h2{
 
 .navColor ul li a:hover{
     color: grey !important;
+}
+.compare-fields {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.compare-fields div {
+    min-width: 50px;
+}
+
+.compare-fields .compare-input {
+    width: 30%;
+}
+
+.compare-vs {
+    margin: 20px;
+}
+
+@media only screen and (max-width: 900px) {
+    .compare-fields {
+       flex-direction: column;
+    }
+    .compare-input {
+        width: 100% !important;
+    }
+    .compare-input input {
+        margin: auto;
+    }
+}
+
+    .compare-fields .bc-wrapper {
+        position: relative;
+        width: 100%;
+    }
+
+    .full {
+        width: 100% !important;
+    }
+
+    .gpu-table {
+        font-size: 22px;
+    }
+
+    .gpu-table img {
+        padding: 15px;
+        margin: auto;
+    }
+
+.bc-menu {
+    position: absolute;
+    right: 0px;
+    left: 0px;
+    margin: 0px 20px;
+    display: none;
 }
