@@ -26,9 +26,11 @@
 </div>
 
 <div class="row">
-    <div id="gpuTable1" class="gpu-table col-md-6 col-sm-12">
+    <div class="gpu-table col-md-6 col-sm-12">
+        <div id="gpuTable1" class="dark card"></div>
     </div>
-    <div id="gpuTable2" class="gpu-table col-md-6 col-sm-12">
+    <div class="gpu-table col-md-6 col-sm-12">
+        <div id="gpuTable2" class="dark card"></div>
     </div>
 </div>
 <script>
@@ -68,6 +70,7 @@
 
             $('#gpuTable1').html(gpu1Html);
             $('#gpuTable2').html(gpu2Html);
+            $('.gpu-table').show();
         }
 
         $('#compareForm').submit(function (event) {
